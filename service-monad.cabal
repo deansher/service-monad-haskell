@@ -1,0 +1,54 @@
+name:                service-monad
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/deansher/service-monad-haskell
+license:             BSD3
+license-file:        LICENSE
+author:              Dean Thompson
+maintainer:          deansherthompson@gmail.com
+copyright:           (c) Dean Thompson 2017, 2018
+category:            lib
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  ghc-options:         -Wall
+  exposed-modules:     Control.Monad.Service
+  build-depends:       base
+                     , bytestring
+                     , protolude
+                     , text
+  default-language:    Haskell2010
+  default-extensions:  DeriveGeneric
+                     , GeneralizedNewtypeDeriving
+                     , NoImplicitPrelude
+                     , OverloadedStrings
+                     , RecordWildCards
+                     , ScopedTypeVariables
+
+test-suite todoist-api-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Main.hs
+  other-modules:       Control.Monad.Service.Test
+  build-depends:       base
+                     , bytestring
+                     , hedgehog
+                     , protolude
+                     , service-monad
+                     , text
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+  default-extensions:  DeriveGeneric
+                     , GeneralizedNewtypeDeriving
+                     , NoImplicitPrelude
+                     , OverloadedStrings
+                     , RecordWildCards
+                     , ScopedTypeVariables
+
+source-repository head
+  type:     git
+  location: git@github.com:deansher/service-monad-haskell.git
