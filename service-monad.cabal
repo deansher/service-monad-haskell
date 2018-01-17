@@ -33,7 +33,6 @@ test-suite todoist-api-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Main.hs
-  other-modules:       Control.Monad.Service.Test
   build-depends:       base
                      , bytestring
                      , hedgehog
